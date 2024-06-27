@@ -3,6 +3,7 @@
 
 /* import another css */
 @import url('homepage.css');
+@import url('location.css');
 
 :root {
     --dark-brown: #7F7166;
@@ -74,6 +75,7 @@ ul li {
     top: 0;
     left: 0;
     display: none;
+    z-index: 4;
 }
 
 .side-menu-bar .wrapper {
