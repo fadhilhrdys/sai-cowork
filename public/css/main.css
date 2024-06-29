@@ -4,6 +4,7 @@
 /* import another css */
 @import url('homepage.css');
 @import url('location.css');
+@import url('detail-location.css');
 
 :root {
     --dark-brown: #7F7166;
@@ -193,6 +194,28 @@ ul li {
     border-radius: 20px;
     width: 100%;
     margin-top: 15px;
+}
+
+/* breadcrumb */
+.breadcrumb {
+    width: 95%;
+    margin: 25px auto 0 auto;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 10px;
+}
+
+.breadcrumb .wrapper {
+    display: flex;
+}
+
+.breadcrumb .wrapper h6 {
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.breadcrumb .wrapper h6:nth-child(2) {
+    font-weight: 600;
 }
 
 footer {
