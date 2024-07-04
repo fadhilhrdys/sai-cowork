@@ -10,6 +10,14 @@ Route::get('/location', function () {
     return view('main-website.pages.location.location');
 });
 
-Route::get('/detail-location', function () {
+Route::get('/location/detail-location', function () {
     return view('main-website.pages.location.detail-location');
+});
+
+Route::get('/blog', function () {
+    return view('main-website.pages.blog.blog');
+});
+
+Route::get('/blog/detail-blog', function () {
+    return view('main-website.pages.blog.detail-blog');
 });

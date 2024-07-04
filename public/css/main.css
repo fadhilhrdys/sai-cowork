@@ -5,6 +5,7 @@
 @import url('homepage.css');
 @import url('location.css');
 @import url('detail-location.css');
+@import url('blog.css');
 
 :root {
     --dark-brown: #7F7166;
