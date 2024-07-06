@@ -21,3 +21,7 @@ Route::get('/blog', function () {
 Route::get('/blog/detail-blog', function () {
     return view('main-website.pages.blog.detail-blog');
 });
+
+Route::get('/gallery', function () {
+    return view('main-website.pages.gallery');
+});
