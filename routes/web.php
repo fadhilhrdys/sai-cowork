@@ -25,3 +25,15 @@ Route::get('/blog/detail-blog', function () {
 Route::get('/gallery', function () {
     return view('main-website.pages.gallery');
 });
+
+Route::get('/login', function () {
+    return view('main-website.pages.auth.login');
+});
+
+Route::get('/forgot-password', function () {
+    return view('main-website.pages.auth.forgot-password');
+});
+
+Route::get('/sign-up', function () {
+    return view('main-website.pages.auth.sign-up');
+});

@@ -7,6 +7,7 @@
 @import url('detail-location.css');
 @import url('blog.css');
 @import url('gallery.css');
+@import url('auth.css');
 
 :root {
     --dark-brown: #7F7166;

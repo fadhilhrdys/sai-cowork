@@ -1,0 +1,166 @@
+.section-auth {
+    width: 95%;
+    margin: 25px auto 0 auto;
+}
+
+.section-auth .wrapper .col-left {
+    display: none;
+}
+
+.section-auth .wrapper .col-right .logo {
+    width: 200px;
+}
+
+.section-auth .wrapper .col-right h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+}
+
+.section-auth .wrapper .col-right p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.section-auth .wrapper .col-right form {
+    margin: 50px 0 20px 0;
+}
+
+.section-auth .wrapper .col-right form .form-group {
+    margin-bottom: 15px;
+}
+
+.section-auth .wrapper .col-right form .form-group label {
+    font-size: 1.1rem;
+    color: var(--black);
+    font-weight: 500;
+}
+
+.section-auth .wrapper .col-right form .form-group input {
+    border: none;
+    border-bottom: 1px solid var(--black);
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 400;
+    width: 100%;
+    height: 45px;
+    outline: none !important;
+}
+
+.section-auth .wrapper .col-right form .form-group .input-group {
+    position: relative;
+}
+
+.section-auth .wrapper .col-right form .form-group .input-group img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.section-auth .wrapper .col-right form .form-group span {
+    font-size: 0.8rem;
+    color: rgba(38, 38, 38, 0.5);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.section-auth .wrapper .col-right form .disclaimer-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-auth .wrapper .col-right form .disclaimer-group span {
+    font-size: 0.9rem;
+    color: rgba(38, 38, 38, 0.5);
+    font-style: italic;
+}
+
+.section-auth .wrapper .col-right form .disclaimer-group a {
+    color: var(--dark-brown);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.section-auth .wrapper .col-right form button {
+    color: var(--white);
+    background-color: var(--dark-brown);
+    padding: 20px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.section-auth .wrapper .col-right .forgot-password {
+    font-size: 1rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.section-auth .wrapper .col-right .forgot-password a {
+    text-decoration: underline;
+    color: var(--dark-brown);
+}
+
+@media (min-width: 600px) {
+    .section-auth .wrapper .col-right form .password-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+}
+
+@media (min-width: 991px) {
+    .section-auth {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .section-auth .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .section-auth .wrapper .col-left {
+        display: block;
+    }
+
+    .section-auth .wrapper .col-left img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .section-auth .wrapper .col-right {
+        padding: 0 50px;
+    }
+
+    .section-auth .wrapper .col-right form .password-group {
+        gap: 25px;
+    }
+
+    .section-auth .wrapper .col-right form .disclaimer-group {
+        flex-direction: row;
+        gap: 0px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section-auth .wrapper .col-right form .disclaimer-group span {
+        font-size: 0.8rem;
+    }
+
+    .section-auth .wrapper .col-right form .disclaimer-group a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1025px) {}
