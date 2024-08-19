@@ -1,6 +1,6 @@
 <div class="cards">
     <div class="card">
-        <img class="thumbnail" src="{{ ('img/gallery-1.jpg') }}" alt="co working space">
+        <img class="thumbnail" src="{{ ('/img/gallery-1.jpg') }}" alt="co working space">
         <div class="body-card">
             <h3>Event Space</h3>
             <p>
@@ -11,11 +11,11 @@
         <div class="footer-card">
             <div class="meta-info">
                 <div class="meta">
-                    <img src="{{ ('img/icon-person.png') }}" alt="">
+                    <img src="{{ ('/img/icon-person.png') }}" alt="">
                     <h6>55 Persons</h6>
                 </div>
                 <div class="meta">
-                    <img src="{{ ('img/icon-price-tag.png') }}" alt="">
+                    <img src="{{ ('/img/icon-price-tag.png') }}" alt="">
                     <h6>From Rp 1.000.000/hour</h6>
                 </div>
             </div>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="card">
-        <img class="thumbnail" src="{{ ('img/gallery-2.jpg') }}" alt="co working space">
+        <img class="thumbnail" src="{{ ('/img/gallery-2.jpg') }}" alt="co working space">
         <div class="body-card">
             <h3>Event Space</h3>
             <p>
@@ -33,11 +33,11 @@
         <div class="footer-card">
             <div class="meta-info">
                 <div class="meta">
-                    <img src="{{ ('img/icon-person.png') }}" alt="">
+                    <img src="{{ ('/img/icon-person.png') }}" alt="">
                     <h6>55 Persons</h6>
                 </div>
                 <div class="meta">
-                    <img src="{{ ('img/icon-price-tag.png') }}" alt="">
+                    <img src="{{ ('/img/icon-price-tag.png') }}" alt="">
                     <h6>From Rp 450.000/hour</h6>
                 </div>
             </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="card">
-        <img class="thumbnail" src="{{ ('img/gallery-1.jpg') }}" alt="co working space">
+        <img class="thumbnail" src="{{ ('/img/gallery-1.jpg') }}" alt="co working space">
         <div class="body-card">
             <h3>Event Space</h3>
             <p>
@@ -55,11 +55,11 @@
         <div class="footer-card">
             <div class="meta-info">
                 <div class="meta">
-                    <img src="{{ ('img/icon-person.png') }}" alt="">
+                    <img src="{{ ('/img/icon-person.png') }}" alt="">
                     <h6>55 Persons</h6>
                 </div>
                 <div class="meta">
-                    <img src="{{ ('img/icon-price-tag.png') }}" alt="">
+                    <img src="{{ ('/img/icon-price-tag.png') }}" alt="">
                     <h6>From Rp 1.000.000/hour</h6>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         </div>
     </div>
     <div class="card">
-        <img class="thumbnail" src="{{ ('img/gallery-2.jpg') }}" alt="co working space">
+        <img class="thumbnail" src="{{ ('/img/gallery-2.jpg') }}" alt="co working space">
         <div class="body-card">
             <h3>Event Space</h3>
             <p>
@@ -78,11 +78,11 @@
         <div class="footer-card">
             <div class="meta-info">
                 <div class="meta">
-                    <img src="{{ ('img/icon-person.png') }}" alt="">
+                    <img src="{{ ('/img/icon-person.png') }}" alt="">
                     <h6>55 Persons</h6>
                 </div>
                 <div class="meta">
-                    <img src="{{ ('img/icon-price-tag.png') }}" alt="">
+                    <img src="{{ ('/img/icon-price-tag.png') }}" alt="">
                     <h6>From Rp 450.000/hour</h6>
                 </div>
             </div>

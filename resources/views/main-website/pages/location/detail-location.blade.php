@@ -8,22 +8,22 @@
                 <h1>Soho Capital, West Jakarta</h1>
                 <div class="button-group">
                     <a href="http://"><button>Get Space</button></a>
-                    <a href="http://"><button><img src="{{ ('img/icon-wa-cta.png') }}">WhatsApp Now</button></a>
+                    <a href="http://"><button><img src="{{ ('/img/icon-wa-cta.png') }}">WhatsApp Now</button></a>
                 </div>
             </div>
             <div class="row-gallery">
                 <div class="galleries-mobile">
-                    <img src="{{ ('img/gallery-1.jpg') }}">
-                    <img src="{{ ('img/gallery-2.jpg') }}">
-                    <img src="{{ ('img/gallery-3.jpg') }}">
+                    <img src="{{ ('/img/gallery-1.jpg') }}">
+                    <img src="{{ ('/img/gallery-2.jpg') }}">
+                    <img src="{{ ('/img/gallery-3.jpg') }}">
                 </div>
                 <div class="galleries-desktop">
-                    <img class="hero-image" src="{{ ('img/gallery-1.jpg') }}" alt="co working space">
+                    <img class="hero-image" src="{{ ('/img/gallery-1.jpg') }}" alt="co working space">
                     <div class="wrapper">
-                        <img src="{{ ('img/gallery-2.jpg') }}" alt="co working space">
-                        <img src="{{ ('img/gallery-3.jpg') }}" alt="co working space">
-                        <img src="{{ ('img/gallery-4.jpg') }}" alt="co working space">
-                        <img src="{{ ('img/gallery-5.jpg') }}" alt="co working space">
+                        <img src="{{ ('/img/gallery-2.jpg') }}" alt="co working space">
+                        <img src="{{ ('/img/gallery-3.jpg') }}" alt="co working space">
+                        <img src="{{ ('/img/gallery-4.jpg') }}" alt="co working space">
+                        <img src="{{ ('/img/gallery-5.jpg') }}" alt="co working space">
                     </div>
                 </div>
                 <a href="http://" class="btn-gallery"><button>View Gallery</button></a>
@@ -45,12 +45,12 @@
             <div class="col-amenities">
                 <h2>Amenities</h2>
                 <ul>
-                    <li><img src="{{ ('img/icon-dot.png') }}" alt="sai cowork">Chrome Cast</li>
-                    <li><img src="{{ ('img/icon-dot.png') }}" alt="sai cowork">White Board</li>
-                    <li><img src="{{ ('img/icon-dot.png') }}" alt="sai cowork">Wi-Fi</li>
-                    <li><img src="{{ ('img/icon-dot.png') }}" alt="sai cowork">Projector</li>
-                    <li><img src="{{ ('img/icon-dot.png') }}" alt="sai cowork">Free Flow Tea and Coffee (Self Sevice)</li>
-                    <li><img src="{{ ('img/icon-dot.png') }}" alt="sai cowork">Spacious Parking Area</li>
+                    <li><img src="{{ ('/img/icon-dot.png') }}" alt="sai cowork">Chrome Cast</li>
+                    <li><img src="{{ ('/img/icon-dot.png') }}" alt="sai cowork">White Board</li>
+                    <li><img src="{{ ('/img/icon-dot.png') }}" alt="sai cowork">Wi-Fi</li>
+                    <li><img src="{{ ('/img/icon-dot.png') }}" alt="sai cowork">Projector</li>
+                    <li><img src="{{ ('/img/icon-dot.png') }}" alt="sai cowork">Free Flow Tea and Coffee (Self Sevice)</li>
+                    <li><img src="{{ ('/img/icon-dot.png') }}" alt="sai cowork">Spacious Parking Area</li>
                 </ul>
             </div>
         </div>
