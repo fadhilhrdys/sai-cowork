@@ -154,6 +154,10 @@
     .section-blog-2 .wrapper .blog .featured-image {
         height: 200px;
     }
+
+    .section-detail-blog-1 .wrapper img {
+        height: 350px;
+    }
 }
 
 /* large display */
@@ -164,5 +168,9 @@
 
     .section-blog-2 .wrapper .blog .featured-image {
         height: 250px;
+    }
+
+    .section-detail-blog-1 .wrapper img {
+        height: 450px;
     }
 }
