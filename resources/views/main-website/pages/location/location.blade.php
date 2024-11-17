@@ -24,7 +24,7 @@
             <h2>Find Best Space For You</h2>
             <div class="cities">
                 <div class="city">
-                    <a href="">
+                    <a href="{{ ('/location/detail-location') }}">
                         <img src="{{ ('img/gallery-1.jpg') }}" alt="sai cowork jakarta">
                         <div class="wording">
                             <h3>Jakarta</h3>

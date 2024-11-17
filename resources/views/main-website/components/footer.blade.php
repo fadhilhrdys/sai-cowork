@@ -12,10 +12,10 @@
             <div class="navigations">
                 <h4>Navigation</h4>
                 <ul>
-                    <li><a href="#">Homepage</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Blogs</a></li>
+                    <li><a href="{{ '/' }}">Homepage</a></li>
+                    <li><a href="{{ '/location' }}">Location</a></li>
+                    <li><a href="{{ '/gallery' }}">Gallery</a></li>
+                    <li><a href="{{ '/blogs' }}">Blogs</a></li>
                 </ul>
             </div>
             <div class="contacts">

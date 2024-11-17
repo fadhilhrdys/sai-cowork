@@ -47,7 +47,7 @@
                     co working spaces, and meeting rooms in every major town, city,
                     and transport hub.
                 </p>
-                <a href="#"><button>Find My Space</button></a>
+                <a href="{{ '/location' }}"><button>Find My Space</button></a>
             </div>
         </div>
     </div>

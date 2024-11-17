@@ -24,11 +24,11 @@
                     </div>
                     <div class="disclaimer-group">
                         <span>This is your password to login to SaiCowork App</span>
-                        <a href="http://">Forgot password?</a>
+                        <a href="{{ '/forgot-password' }}">Forgot password?</a>
                     </div>
                     <button>Login</button>
                 </form>
-                <p class="forgot-password">Don't have an account? <a href="">Create an account</a></p>
+                <p class="forgot-password">Don't have an account? <a href="{{ '/sign-up' }}">Create an account</a></p>
             </div>
         </div>
     </div>

@@ -43,7 +43,7 @@
                     </div>
                     <button>Sign Up</button>
                 </form>
-                <p class="forgot-password">Already have an account <a href="">Login</a></p>
+                <p class="forgot-password">Already have an account <a href="{{ '/login' }}">Login</a></p>
             </div>
         </div>
     </div>
