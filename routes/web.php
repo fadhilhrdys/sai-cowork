@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,4 +37,21 @@ Route::get('/forgot-password', function () {
 
 Route::get('/sign-up', function () {
     return view('main-website.pages.auth.sign-up');
+});
+
+// cms area
+Route::middleware('guest:admin')->prefix('cms')->group(function() { // add "guest:admin for restrict after logged in
+    Route::get('/login', [AdminAuthController::class, 'login'])->name('admin_login');
+    Route::post('/login', [AdminAuthController::class, 'authenticate'])->name('admin_authenticate');
+
+    Route::get('/register', [AdminAuthController::class, 'register'])->name('admin_register');
+    Route::post('/register', [AdminAuthController::class, 'store'])->name('admin_register_store');
+});
+
+Route::middleware('admin')->prefix('cms')->group(function() {
+    Route::get('/dashboard', function () {
+        return view('cms.dashboard');
+    });
+
+    Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin_logout');
 });
