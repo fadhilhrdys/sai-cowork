@@ -1,6 +1,12 @@
 <div>
     <h1>this is login</h1>
 
+    @if(session()->has('registered'))
+    <div class="alert alert-success fade show mt-3" role="success">
+        {{ session('registered') }}
+    </div>
+    @endif
+
     <form action="{{ route('admin_authenticate') }}" method="POST">
         @csrf
         <div class="form-group">

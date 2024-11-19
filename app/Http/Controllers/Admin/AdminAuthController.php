@@ -24,6 +24,8 @@ class AdminAuthController extends Controller
             'password' => 'required'
         ]);
 
+        // masteradmin
+
         if(Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/cms/dashboard');
@@ -49,18 +51,18 @@ class AdminAuthController extends Controller
         return view('cms.auth.register');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email:dns|unique:admins',
-            'password' => 'required'
+            'password' => 'required|min:8'
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
 
         Admin::create($validated);
 
-        return redirect('/cms/login');
+        return redirect('/cms/login')->with('registered', 'Berhasil register! silahkan login');
     }
 }
