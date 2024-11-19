@@ -28,9 +28,9 @@ class AdminAuthController extends Controller
 
         if(Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/cms/dashboard');
+            return redirect()->intended('/cms/dashboard')->with('loggedIn', 'Berhasil login!');
         } else {
-            return redirect()->route('admin_login')->with('error', 'wrong credentials');
+            return redirect()->route('admin_login')->with('errorAuth', 'Incorect email or password');
         }
     }
 
