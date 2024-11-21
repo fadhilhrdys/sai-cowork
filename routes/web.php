@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\DashboardCmsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -49,9 +50,8 @@ Route::middleware('guest:admin')->prefix('cms')->group(function() { // add "gues
 });
 
 Route::middleware('admin')->prefix('cms')->group(function() {
-    Route::get('/dashboard', function () {
-        return view('cms.dashboard');
-    });
+    Route::get('/dashboard', [DashboardCmsController::class, 'show']);
 
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin_logout');
 });
+
