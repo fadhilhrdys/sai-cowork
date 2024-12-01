@@ -3,30 +3,17 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="{{ ('/cms/dashboard') }}">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
         </a>
         </li><!-- End Dashboard Nav -->
 
-
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#media-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-card-image"></i><span>Media</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link collapsed" href="{{ route('media.index') }}">
+                <i class="bi bi-card-image"></i>
+                <span>Media</span>
             </a>
-            <ul id="media-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="tables-general.html">
-                        <i class="bi bi-circle"></i><span>All Media</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="tables-data.html">
-                        <i class="bi bi-plus-lg"></i><span>Add New Media</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#article-nav" data-bs-toggle="collapse" href="#">
@@ -102,10 +89,10 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('admin_logout') }}">
-              <i class="bi bi-box-arrow-in-right"></i>
-              <span>Logout</span>
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Logout</span>
             </a>
-          </li><!-- End Login Page Nav -->
+        </li><!-- End Login Page Nav -->
 
     </ul>
 

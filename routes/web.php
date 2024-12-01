@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\DashboardCmsController;
+use App\Http\Controllers\Admin\MediaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -51,7 +52,9 @@ Route::middleware('guest:admin')->prefix('cms')->group(function() { // add "gues
 
 Route::middleware('admin')->prefix('cms')->group(function() {
     Route::get('/dashboard', [DashboardCmsController::class, 'show']);
-
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin_logout');
+
+    // media route
+    Route::resource('media', MediaController::class);
 });
 

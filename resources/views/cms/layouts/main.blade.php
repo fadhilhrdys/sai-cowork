@@ -25,6 +25,8 @@
         <link href="{{ ('/cms/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
         <link href="{{ ('/cms/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
         <link href="{{ ('/cms/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
+
 
         <!-- Template Main CSS File -->
         <link href="{{ ('/cms/css/style.css') }}" rel="stylesheet">
@@ -36,6 +38,7 @@
         @yield('cms-content')
 
         <!-- Vendor JS Files -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="{{ ('/cms/vendor/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ ('/cms/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ ('/cms/vendor/chart.js/chart.umd.js') }}"></script>
@@ -44,6 +47,47 @@
         <script src="{{ ('/cms/vendor/simple-datatables/simple-datatables.js') }}"></script>
         <script src="{{ ('/cms/vendor/tinymce/tinymce.min.js') }}"></script>
         <script src="{{ ('/cms/vendor/php-email-form/validate.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        
+        {{-- Toast notification --}}
+        <script>
+            @if (Session::has('message'))
+                var type = "{{ Session::get('alert-type', 'info') }}"
+                switch (type) {
+                    case 'info':
+
+                        toastr.options.timeOut = 10000;
+                        toastr.info("{{ Session::get('message') }}");
+                        var audio = new Audio('audio.mp3');
+                        audio.play();
+                        break;
+                    case 'success':
+
+                        toastr.options.timeOut = 10000;
+                        toastr.success("{{ Session::get('message') }}");
+                        var audio = new Audio('audio.mp3');
+                        audio.play();
+
+                        break;
+                    case 'warning':
+
+                        toastr.options.timeOut = 10000;
+                        toastr.warning("{{ Session::get('message') }}");
+                        var audio = new Audio('audio.mp3');
+                        audio.play();
+
+                        break;
+                    case 'error':
+
+                        toastr.options.timeOut = 10000;
+                        toastr.error("{{ Session::get('message') }}");
+                        var audio = new Audio('audio.mp3');
+                        audio.play();
+
+                        break;
+                }
+            @endif
+        </script>
 
         <!-- Template Main JS File -->
         <script src="{{ ('/cms/js/main.js') }}"></script>
