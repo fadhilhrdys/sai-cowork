@@ -21,12 +21,12 @@
             </a>
             <ul id="article-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="tables-general.html">
+                    <a href="{{ route('article.index') }}">
                         <i class="bi bi-circle"></i><span>List of Article</span>
                     </a>
                 </li>
                 <li>
-                    <a href="tables-data.html">
+                    <a href="{{ route('article.create') }}">
                         <i class="bi bi-plus-lg"></i><span>Add New Article</span>
                     </a>
                 </li>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\DashboardCmsController;
 use App\Http\Controllers\Admin\MediaController;
 use Illuminate\Support\Facades\Route;
@@ -56,5 +57,8 @@ Route::middleware('admin')->prefix('cms')->group(function() {
 
     // media route
     Route::resource('media', MediaController::class);
+
+    // article route
+    Route::resource('article', ArticleController::class);
 });
 
