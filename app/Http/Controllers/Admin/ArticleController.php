@@ -17,7 +17,13 @@ class ArticleController extends Controller
     {
         // get name logged admin with guard
         $name_admin = Auth::guard('admin')->user()->name;
-        return view('cms.pages.article.index', ['name_admin' => $name_admin]);
+        // get data
+        $articles = Article::all();
+
+        return view('cms.pages.article.index', [
+            'name_admin' => $name_admin,
+            'articles' => $articles
+        ]);
     }
 
     /**

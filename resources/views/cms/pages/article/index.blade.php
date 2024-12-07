@@ -24,29 +24,27 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
-                <th scope="col">Is Active</th>
+                <th scope="col">Status</th>
                 <th scope="col">#</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="align-middle">
-                <th scope="row">1</th>
-                <td class="text-truncate" style="max-width: 300px;">Gempuran Coworking Space</td>
-                <td>Active</td>
-                <td>
-                    <button type="button" class="btn btn-info"><i class="bi bi-info-circle"></i></button>
-                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                </td>
-            </tr>
-            <tr class="align-middle">
-                <th scope="row">2</th>
-                <td class="text-truncate" style="max-width: 100%;">Gempuran Coworking Space di Jakarta</td>
-                <td>Active</td>
-                <td>
-                    <button type="button" class="btn btn-info"><i class="bi bi-info-circle"></i></button>
-                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                </td>
-            </tr>
+            @php
+                $no = 1;
+            @endphp
+            @forelse ($articles as $article)
+                <tr class="align-middle">
+                    <th scope="row">{{ $no++ }}</th>
+                    <td class="text-truncate" style="max-width: 300px;">{{ $article->title }}</td>
+                    <td>{{ $article->is_active ? "Active" : "Deactive" }}</td>
+                    <td>
+                        <button type="button" class="btn btn-info"><i class="bi bi-info-circle"></i></button>
+                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            @empty
+                <p>data not found</p>
+            @endforelse
         </tbody>
         </table>
         <!-- End Table with hoverable rows -->
