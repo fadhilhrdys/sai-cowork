@@ -97,7 +97,16 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // get name logged admin with guard
+        $name_admin = Auth::guard('admin')->user()->name;
+
+        // get detail data
+        $article = Article::findOrFail($id);
+
+        return view('cms.pages.article.edit', [
+            'name_admin' => $name_admin,
+            'article' => $article
+        ]);       
     }
 
     /**
@@ -105,7 +114,60 @@ class ArticleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // validate request data
+        // $request->validate([
+        //     'title_article' => 'required',
+        //     'slug_article' => 'required',
+        //     'content' => 'required',
+        //     'thumbnail_article' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        // ]);
+
+        // get id data
+        $article = Article::findOrFail($id);
+
+        // check if user add new image/thumbnail
+        if($request->hasFile('update_thumbnail')) {
+            // change file name to time when upload the file
+            $imageName = time().'.'.$request->update_thumbnail->extension();
+
+            // route media saving
+            $request->update_thumbnail->move(public_path('medias'), $imageName);
+
+            $media = new Media([
+                'category' => 'article',
+                'alt_image' => $request->title_article,
+                'content_file' => 'medias/'.$imageName,
+                'admin_id' => Auth::guard('admin')->user()->id,
+            ]);
+            $media->save();
+
+            // keep the media id and store article
+            $article->update([
+                'title' => $request->title_article,
+                'slug' => $request->slug_article,
+                'content' => $request->content,
+                'is_active' => $request->status,
+                'media_id' => $media->id,
+                'admin_id' => Auth::guard('admin')->user()->id
+            ]);         
+
+        } else {
+            $article->update([
+                'title' => $request->title_article,
+                'slug' => $request->slug_article,
+                'content' => $request->content,
+                'is_active' => $request->status,
+                'admin_id' => Auth::guard('admin')->user()->id
+            ]);
+
+            $notification = array(
+                'message' => 'Article update successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('article.index')->with($notification); 
+        }
+
     }
 
     /**

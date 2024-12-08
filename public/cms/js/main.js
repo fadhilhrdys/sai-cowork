@@ -340,4 +340,20 @@
     });
   });
 
+  /**
+   * Preview thumbnail
+   */
+  $(function() {
+    $('#update_thumbnail').change((event) => {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function(){
+            var img = document.querySelector('.thumbnail-edit-article');
+            img.src = reader.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    })
+  })
+
 })();

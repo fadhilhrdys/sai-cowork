@@ -38,7 +38,7 @@
                     <td class="text-truncate" style="max-width: 300px;">{{ $article->title }}</td>
                     <td>{{ $article->is_active ? "Active" : "Deactive" }}</td>
                     <td>
-                        <button type="button" class="btn btn-info d-inline"><i class="bi bi-info-circle"></i></button>
+                        <a href="{{ route('article.edit', $article->id) }}"><button type="button" class="btn btn-info d-inline"><i class="bi bi-info-circle"></i></button></a>
                         <form class="d-inline" action="{{ route('article.destroy', $article->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
