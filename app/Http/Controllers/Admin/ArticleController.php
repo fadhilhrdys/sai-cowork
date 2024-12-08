@@ -111,8 +111,18 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+
+        $article->delete();
+
+        // data for toast notification
+        $notification = array(
+            'message' => 'Article deleted successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('article.index')->with($notification);        
     }
 }
