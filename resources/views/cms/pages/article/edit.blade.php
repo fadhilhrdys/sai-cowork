@@ -48,7 +48,7 @@
             <div class="col-md-6">
                 <label for="status" class="form-label">Status Article</label>
                 <div class="form-check form-switch">
-                    <input class="form-check-input" name="status" type="checkbox" id="status" value="{{ $article->is_active }}">
+                    <input class="form-check-input" name="status" type="checkbox" id="status" @checked($article->is_active)>
                     <label class="form-check-label" for="status">Active</label>
                 </div>
             </div>

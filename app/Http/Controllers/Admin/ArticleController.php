@@ -115,12 +115,11 @@ class ArticleController extends Controller
     public function update(Request $request, string $id)
     {
         // validate request data
-        // $request->validate([
-        //     'title_article' => 'required',
-        //     'slug_article' => 'required',
-        //     'content' => 'required',
-        //     'thumbnail_article' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-        // ]);
+        $request->validate([
+            'title_article' => 'required',
+            'slug_article' => 'required',
+            'content' => 'required',
+        ]);
 
         // get id data
         $article = Article::findOrFail($id);
@@ -146,17 +145,24 @@ class ArticleController extends Controller
                 'title' => $request->title_article,
                 'slug' => $request->slug_article,
                 'content' => $request->content,
-                'is_active' => $request->status,
+                'is_active' => $request->status ? true : false,
                 'media_id' => $media->id,
                 'admin_id' => Auth::guard('admin')->user()->id
-            ]);         
+            ]);    
+            
+            $notification = array(
+                'message' => 'Article update successfully',
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->route('article.index')->with($notification); 
 
         } else {
             $article->update([
                 'title' => $request->title_article,
                 'slug' => $request->slug_article,
                 'content' => $request->content,
-                'is_active' => $request->status,
+                'is_active' => $request->status ? true : false,
                 'admin_id' => Auth::guard('admin')->user()->id
             ]);
 
