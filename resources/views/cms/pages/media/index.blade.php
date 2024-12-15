@@ -68,7 +68,7 @@
                         </form>
                       </div>
                     </div>
-                  </div><!-- End Vertically centered Modal-->
+                </div><!-- End Vertically centered Modal-->
 
                 {{-- this col below for looping image --}}
                 @forelse($medias as $media)

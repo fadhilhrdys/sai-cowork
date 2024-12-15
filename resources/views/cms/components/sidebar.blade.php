@@ -14,7 +14,8 @@
                 <i class="bi bi-card-image"></i>
                 <span>Media</span>
             </a>
-
+        </li>
+        
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#article-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-newspaper"></i><span>Article</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -34,21 +35,10 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#cities-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-pin-map"></i><span>Cities</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link collapsed" href="{{ route('city.index') }}">
+                <i class="bi bi-pin-map"></i>
+                <span>City</span>
             </a>
-            <ul id="cities-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="tables-general.html">
-                        <i class="bi bi-circle"></i><span>List of City</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="tables-data.html">
-                        <i class="bi bi-plus-lg"></i><span>Add New City</span>
-                    </a>
-                </li>
-            </ul>
         </li>
 
         <li class="nav-item">

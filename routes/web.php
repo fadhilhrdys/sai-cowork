@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\DashboardCmsController;
 use App\Http\Controllers\Admin\MediaController;
 use Illuminate\Support\Facades\Route;
@@ -60,5 +61,8 @@ Route::middleware('admin')->prefix('cms')->group(function() {
 
     // article route
     Route::resource('article', ArticleController::class);
+
+    // city route
+    Route::resource('city', CityController::class);
 });
 
