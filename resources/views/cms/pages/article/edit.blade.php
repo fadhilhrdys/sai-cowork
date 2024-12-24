@@ -23,7 +23,7 @@
             @method('PUT')
             <div class="col-12">
                 <div class="container-thumbnail">
-                    <img class="thumbnail-edit-article" src="{{ asset($article->media->content_file) }}" alt="{{ $article->media->alt_image }}">
+                    <img class="thumbnail-edit" src="{{ asset($article->media->content_file) }}" alt="{{ $article->media->alt_image }}">
                     <div class="edit-thumbnail">
                         <label for="update_thumbnail" class="form-label">Add New Thumbnail</label>
                         <input class="form-control" type="file" id="update_thumbnail" name="update_thumbnail">

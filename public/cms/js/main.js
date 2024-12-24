@@ -348,7 +348,7 @@
         var input = event.target;
         var reader = new FileReader();
         reader.onload = function(){
-            var img = document.querySelector('.thumbnail-edit-article');
+            var img = document.querySelector('.thumbnail-edit');
             img.src = reader.result;
             img.style.display = 'block';
         };
