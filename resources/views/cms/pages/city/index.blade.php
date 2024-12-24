@@ -63,36 +63,36 @@
 
         <!-- Table with hoverable rows -->
         <table class="table table-hover mt-4">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Image</th>
-                <th scope="col">City</th>
-                <th scope="col">#</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php
-                $no = 1;
-            @endphp
-            @forelse ($cities as $city)
-                <tr class="align-middle">
-                    <th scope="row">{{ $no++ }}</th>
-                    <td><img style="height: 75px" src="{{ asset($city->media->content_file) }}" alt=""></td>
-                    <td>{{ $city->name }}</td>
-                    <td>
-                        <a href="#"><button type="button" class="btn btn-info d-inline"><i class="bi bi-info-circle"></i></button></a>
-                        <form class="d-inline" action="{{ route('city.destroy', $city->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </form>
-                    </td>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">City</th>
+                    <th scope="col">#</th>
                 </tr>
-            @empty
-                <p>data not found</p>
-            @endforelse
-        </tbody>
+            </thead>
+            <tbody>
+                @php
+                    $no = 1;
+                @endphp
+                @forelse ($cities as $city)
+                    <tr class="align-middle">
+                        <th scope="row">{{ $no++ }}</th>
+                        <td><img style="width: 150px; height: 75px; object-fit:cover;" src="{{ asset($city->media->content_file) }}" alt=""></td>
+                        <td>{{ $city->name }}</td>
+                        <td>
+                            <a href="{{ route('city.edit', $city->id) }}"><button type="button" class="btn btn-info d-inline" data-bs-toggle="modal" data-bs-target="#show-city-modal"><i class="bi bi-info-circle"></i></button></a>
+                            <form class="d-inline" action="{{ route('city.destroy', $city->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @empty
+                    <p>data not found</p>
+                @endforelse
+            </tbody>
         </table>
         <!-- End Table with hoverable rows -->
     </main>

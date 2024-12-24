@@ -94,7 +94,14 @@ class CityController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $name_admin = Auth::guard('admin')->user()->name;
+
+        $city = City::find($id);
+
+        return view ('cms.pages.city.edit',[
+            'name_admin' => $name_admin,
+            'city' => $city
+        ]);
     }
 
     /**
@@ -102,7 +109,57 @@ class CityController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+       // validate request data
+       $request->validate([
+        'name_city' => 'required',
+    ]);
+
+    // get id data
+    $city = City::findOrFail($id);
+
+    // check if user add new image/thumbnail
+    if($request->hasFile('update_thumbnail')) {
+        // change file name to time when upload the file
+        $imageName = time().'.'.$request->update_thumbnail->extension();
+
+        // route media saving
+        $request->update_thumbnail->move(public_path('medias'), $imageName);
+
+        $media = new Media([
+            'category' => 'city',
+            'alt_image' => $request->name_city,
+            'content_file' => 'medias/'.$imageName,
+            'admin_id' => Auth::guard('admin')->user()->id,
+        ]);
+        $media->save();
+
+        // keep the media id and store article
+        $city->update([
+            'name' => $request->name_city,
+            'media_id' => $media->id,
+            'admin_id' => Auth::guard('admin')->user()->id
+        ]);    
+        
+        $notification = array(
+            'message' => 'City update successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('city.index')->with($notification); 
+
+    } else {
+        $city->update([
+            'name' => $request->name_city,
+            'admin_id' => Auth::guard('admin')->user()->id
+        ]);
+
+        $notification = array(
+            'message' => 'City update successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('city.index')->with($notification); 
+    }
     }
 
     /**
