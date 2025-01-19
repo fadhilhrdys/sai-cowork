@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\DashboardCmsController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\PlaceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -64,5 +65,8 @@ Route::middleware('admin')->prefix('cms')->group(function() {
 
     // city route
     Route::resource('city', CityController::class);
+
+    // place route
+    Route::resource('place', PlaceController::class);
 });
 
